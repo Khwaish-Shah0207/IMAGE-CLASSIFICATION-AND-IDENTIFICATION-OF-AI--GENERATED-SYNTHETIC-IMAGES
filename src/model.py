@@ -42,11 +42,7 @@ def build_model():
         )
     ])
     return model
-
-
 # Testing the model
 if __name__ == "__main__":
-
     model = build_model()
-
     model.summary()
