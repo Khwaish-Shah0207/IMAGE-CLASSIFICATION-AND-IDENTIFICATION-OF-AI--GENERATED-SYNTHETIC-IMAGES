@@ -1,15 +1,11 @@
 from pathlib import Path
 import tensorflow as tf
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 TRAIN_DIR = BASE_DIR / "dataset" / "train"
 TEST_DIR = BASE_DIR / "dataset" / "test"
-
 IMAGE_SIZE = (32, 32)
 BATCH_SIZE = 32
 SEED = 42
-
 def load_datasets():
     train_dataset = tf.keras.utils.image_dataset_from_directory(
         TRAIN_DIR,
@@ -21,7 +17,6 @@ def load_datasets():
         seed=SEED,
     )
     class_names = train_dataset.class_names
-
     test_dataset = tf.keras.utils.image_dataset_from_directory(
         TEST_DIR,
         labels="inferred",
